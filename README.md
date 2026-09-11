@@ -9,8 +9,8 @@ This project documents my progression from learning networking concepts through 
 - Cisco Catalyst 2960 switch
 - Dell OptiPlex 5050
 - Laptop
-- Cisco console cable
-- Cat6 cabling
+- USB to RJ45 console cable
+- Cat6 cabling (pure copper)
 - RJ45 crimping tools
 - Cat6 keystone jacks
 - Patch panel
