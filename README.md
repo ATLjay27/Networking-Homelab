@@ -53,6 +53,9 @@ This lab will be used to practice:
 - Routing
 - DHCP
 - NAT
+- ACLs
+- Network troubleshooting
+- Virtual networking
 
   ## Lessons Learned
 
@@ -60,6 +63,3 @@ This lab will be used to practice:
 
   - Learned how to identify the correct COM port in Windows using the "Device Manager."
   - Learned how to establish a serial connection to a Cisco switch.
-- ACLs
-- Network troubleshooting
-- Virtual networking
