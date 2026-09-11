@@ -26,8 +26,11 @@ This project documents my progression from learning networking concepts through 
 - Configured the switch hostname
 
 ### 2. Physical Cabling
+- Made multiple RJ45 cables using CAT6W cable.
+- Tested all of the cables
+- Made patch cables, and also used RJ45 Keystone Jacks
+- Connected them to patch panel, and from my LabPC to the Switch.
 
-Coming soon.
 
 ### 3. VLANs and Switching
 
@@ -63,3 +66,11 @@ This lab will be used to practice:
 
   - Learned how to identify the correct COM port in Windows using the "Device Manager."
   - Learned how to establish a serial connection to a Cisco switch.
+ 
+  ### Physical Cabling
+
+  - Had trouble passing through the wires into the RJ45 connectors.
+  - Turns out I needed to straighten the wires all the way down at the base, right where they exit the jacket.
+  - When using certain crimping tools, there is a lock on it, when trying to do the final crimp, I couldnt connect the RJ45 connecter into it. I had to simply unlock it.
+  - The cable tester tested a clean 1-8 sequence on one side, but on the other it would skip from 5, then go to 6 then back to 5. I learned that that usually means there is a loose or incomplete crimp, or the wire isnt fully seated on pin 5, which causes that. The fix was to simply do that side over again.
+    
