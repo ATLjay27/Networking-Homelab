@@ -72,5 +72,5 @@ This lab will be used to practice:
   - Had trouble passing through the wires into the RJ45 connectors.
   - Turns out I needed to straighten the wires all the way down at the base, right where they exit the jacket.
   - When using certain crimping tools, there is a lock on it, when trying to do the final crimp, I couldnt connect the RJ45 connecter into it. I had to simply unlock it.
-  - The cable tester tested a clean 1-8 sequence on one side, but on the other it would skip from 5, then go to 6 then back to 5. I learned that that usually means there is a loose or incomplete crimp, or the wire isnt fully seated on pin 5, which causes that. The fix was to simply do that side over again.
+  - The cable tester tested a clean 1-8 sequence on one side, but on the other it would skip from 5, then go to 6 then back to 5. I learned that that usually means that the pin in 5 and 6 are switched and therefore in the wrong spot, and it’s better just to terminate that side again rather than trying to troubleshoot further.
     
