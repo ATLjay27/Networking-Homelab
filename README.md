@@ -26,6 +26,8 @@ This project documents my progression from learning networking concepts through 
 - Configured the switch hostname
 - Erased the memory from old switch owners for a fresh startup config.
 - Made a VLAN 99 management IP address of 10.0.0.1
+
+
   
 
 ### 2. Physical Cabling
@@ -37,13 +39,21 @@ This project documents my progression from learning networking concepts through 
 
 ### 3. VLANs and Switching
 
-
+- Configured SSH to the switch from my laptop, tested it from the Optiplex PC.
 
 ### 4. Routing
 
 Coming soon.
 
-### 5. Virtualization
+### 5. VMware Virtualization and Networking
+
+Coming soon.
+
+### 6. Windows Server & Active Directory
+
+Coming soon.
+
+### 7. Hybrid Physical + Virtual Network
 
 Coming soon.
 
@@ -79,5 +89,9 @@ This lab will be used to practice:
   - When using certain crimping tools, there is a lock on it, when trying to do the final crimp, I couldnt connect the RJ45 connecter into it. I had to simply unlock it.
   - The cable tester tested a clean 1-8 sequence on one side, but on the other it would skip from 5, then go to 6 then back to 5. I learned that that usually means that the pin in 5 and 6 are switched and therefore in the wrong spot, and it’s better just to terminate that side again rather than trying to troubleshoot further.
   - Figured out that the RJ45 connectors that came in the kit I bought were not compatible with my CAT6 AWG23 cable, had trouble passing through at first, but with the new connectors, I got them easily.
+
+    ### VLANs and Switching
+
+    -When trying to SSH into switch from PC, I got an error due to the switch running the older SSH servers that Windows does not support/use. I had to ask Claude, and it ultimately gave me a long command to use when SSH into the switch.
     
     
