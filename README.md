@@ -1,8 +1,8 @@
 # Networking-Homelab
-Building a physical and virtual networking lab to develop hands-on experience after earning my CCNA.
+Building a basic physical and virtual networking lab to develop hands-on experience after earning my CCNA.
 ## About This Lab
 
-This project documents my progression from learning networking concepts through the CCNA to applying those concepts in a physical and virtual lab environment.
+This project documents my progression from learning networking concepts through the CCNA to applying those concepts in a physical and virtual lab environment. It will be a "warmup" to my first major project which will be a recreation of my current job's network, an enterprise plant network. I will be using this project to get familiar with the tools I will have to use to recreate that network.
 
 ## Current Equipment
 
