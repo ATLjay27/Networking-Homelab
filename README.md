@@ -4,7 +4,7 @@ Building a basic physical and virtual networking lab to develop hands-on experie
 
 This project documents my progression from learning networking concepts through the CCNA to applying those concepts in a physical and virtual lab environment. It will be a "warmup" to my first major project which will be a recreation of my current job's network, an enterprise plant network. I will be using this project to get familiar with the tools I will have to use to recreate that network.
 
-## Current Equipment
+## Current Physical Equipment
 
 - Cisco Catalyst 2960 switch
 - Dell OptiPlex 5050
@@ -31,6 +31,7 @@ This project documents my progression from learning networking concepts through 
   
 
 ### 2. Physical Cabling
+
 - Made multiple RJ45 cables using CAT6W cable in T568B format.
 - Tested all of the cables
 - Made patch cables, and also used RJ45 Keystone Jacks
@@ -45,11 +46,11 @@ This project documents my progression from learning networking concepts through 
 
 ### 5. VMware Virtualization and Networking
 
-## Overview
+#### Overview
 
 The virtualization portion of this lab introduces a virtual firewall/router using **OPNsense**. The goal was to build a segmented virtual network, configure inter-VLAN gateways, and provide DHCP services for multiple VLANs.
 
-## Virtual Environment
+#### Virtual Environment
 
 - **Hypervisor:** VMware Workstation
 - **Firewall/Router:** OPNsense
@@ -58,7 +59,7 @@ The virtualization portion of this lab introduces a virtual firewall/router usin
 - **Management Network:** `10.0.0.0/24`
 - **OPNsense LAN Address:** `10.0.0.2/24`
 
-## OPNsense Interface Configuration
+#### OPNsense Interface Configuration
 
 The OPNsense VM was configured with two virtual network interfaces:
 
@@ -69,11 +70,54 @@ The OPNsense VM was configured with two virtual network interfaces:
 
 ### 6. Windows Server & Active Directory
 
-Coming soon.
+#### Overview
+
+Set up a Windows Server environment to gain hands-on experience with Windows administration and Active Directory.
+
+#### Planned Configuration
+
+- Install Windows Server
+- Configure a static IP address
+- Configure the server hostname
+- Install the **Active Directory Domain Services (AD DS)** role
+- Promote the server to a domain controller
+- Create a lab domain
+- Create organizational units (OUs)
+- Create test users and groups
+- Configure basic Group Policy
+- Join a Windows client to the domain
+- Test authentication and domain connectivity
 
 ### 7. Hybrid Physical + Virtual Network
 
-Coming soon.
+#### Overview
+
+The final phase of the lab combines the physical Cisco networking equipment with the virtual OPNsense environment to simulate a small enterprise network.
+
+#### Planned Network
+
+The physical and virtual environments will be connected using VLANs and trunking.
+
+- **Cisco Catalyst 2960:** Physical access/IDF switch
+- **OPNsense:** Virtual firewall/router
+- **VMware:** Virtual networking environment
+- **VLAN 10:** `10.0.10.0/24`
+- **VLAN 20:** `10.0.20.0/24`
+- **VLAN 30:** `10.0.30.0/24`
+- **802.1Q trunking:** VLAN transport between network devices
+- **Inter-VLAN routing:** OPNsense
+
+#### Planned Configuration
+
+- Configure VLANs on the Cisco Catalyst 2960
+- Configure access ports
+- Configure an 802.1Q trunk
+- Connect the physical switch to the virtual network
+- Extend VLANs between the physical and virtual environments
+- Test connectivity between physical and virtual devices
+- Verify DHCP operation across VLANs
+- Document the final topology with a network diagram
+
 
 ## What I'm Learning
 
