@@ -40,14 +40,32 @@ This project documents my progression from learning networking concepts through 
 ### 3. VLANs and Switching
 
 - Configured SSH to the switch from my laptop, tested it from the Optiplex PC.
-
-### 4. Routing
-
-Coming soon.
+- Configured 3 VLANS; HR, Staff, and Guests, put appropriate interfaces in, then created a VLAN for the unused interfaces, and shut them down to prevent VLAN hopping.
+- Prepared to use virtualization to connect and form trunks with a virtual Layer-3 Switch.
 
 ### 5. VMware Virtualization and Networking
 
-Coming soon.
+## Overview
+
+The virtualization portion of this lab introduces a virtual firewall/router using **OPNsense**. The goal was to build a segmented virtual network, configure inter-VLAN gateways, and provide DHCP services for multiple VLANs.
+
+## Virtual Environment
+
+- **Hypervisor:** VMware Workstation
+- **Firewall/Router:** OPNsense
+- **Virtual WAN:** Bridged Networking
+- **Virtual LAN:** VMware Host-only Network
+- **Management Network:** `10.0.0.0/24`
+- **OPNsense LAN Address:** `10.0.0.2/24`
+
+## OPNsense Interface Configuration
+
+The OPNsense VM was configured with two virtual network interfaces:
+
+| Interface | Connection | Purpose | Address |
+|---|---|---|---|
+| WAN | Bridged | Internet Connectivity | DHCP |
+| LAN | Host-only | Internal Lab Network | `10.0.0.2/24` |
 
 ### 6. Windows Server & Active Directory
 
@@ -93,5 +111,26 @@ This lab will be used to practice:
     ### VLANs and Switching
 
     -When trying to SSH into switch from PC, I got an error due to the switch running the older SSH servers that Windows does not support/use. I had to ask Claude, and it ultimately gave me a long command to use when SSH into the switch.
+
+    ### VMware Virtualization and Networking
+
+    -Learned how to install and perform the initial configuration of OPNsense as a virtual firewall/router.
+    -Learned how VMware virtual network adapters map to different types of network connectivity.
+    -Learned the difference between Bridged, NAT, and Host-only networking in VMware.
+    -Learned how to separate a virtual firewall’s WAN and LAN interfaces.
+    -Learned how to configure a static IPv4 address and subnet on an OPNsense interface.
+    -Learned how to access and manage OPNsense through its WebGUI.
+    -Learned how to create and assign VLAN interfaces in OPNsense.
+    -Learned that VLAN IDs and automatically generated interface/device names are separate concepts.
+    -Learned how to assign Layer 3 gateway addresses to VLAN interfaces.
+    -Learned how VLANs can be placed into separate IPv4 subnets for network segmentation.
+    -Learned how to configure Kea DHCPv4 for multiple VLANs.
+    -Learned how to create separate DHCP scopes for different subnets.
+    -Learned the relationship between a VLAN, subnet, default gateway, and DHCP scope.
+    -Learned that multiple VLANs can share a physical/virtual connection through 802.1Q trunking rather than requiring one interface per VLAN.
+    -Learned how virtual networking concepts translate to real-world enterprise network architecture.
+    -Gained practical experience troubleshooting VMware virtual hardware, memory allocation, storage devices, and virtual networking.
+    -Reinforced CCNA concepts by implementing them in an actual virtualized environment rather than only using Packet Tracer.
+    -Learned that network troubleshooting often requires separating the problem into layers instead of assuming the network configuration is the cause.
     
     
