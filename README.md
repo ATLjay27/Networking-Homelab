@@ -159,22 +159,39 @@ This lab will be used to practice:
     ### VMware Virtualization and Networking
 
     -Learned how to install and perform the initial configuration of OPNsense as a virtual firewall/router.
+    
     -Learned how VMware virtual network adapters map to different types of network connectivity.
+    
     -Learned the difference between Bridged, NAT, and Host-only networking in VMware.
+    
     -Learned how to separate a virtual firewall’s WAN and LAN interfaces.
+    
     -Learned how to configure a static IPv4 address and subnet on an OPNsense interface.
+    
     -Learned how to access and manage OPNsense through its WebGUI.
+    
     -Learned how to create and assign VLAN interfaces in OPNsense.
+    
     -Learned that VLAN IDs and automatically generated interface/device names are separate concepts.
+    
     -Learned how to assign Layer 3 gateway addresses to VLAN interfaces.
+    
     -Learned how VLANs can be placed into separate IPv4 subnets for network segmentation.
+    
     -Learned how to configure Kea DHCPv4 for multiple VLANs.
+    
     -Learned how to create separate DHCP scopes for different subnets.
+    
     -Learned the relationship between a VLAN, subnet, default gateway, and DHCP scope.
+    
     -Learned that multiple VLANs can share a physical/virtual connection through 802.1Q trunking rather than requiring one interface per VLAN.
+    
     -Learned how virtual networking concepts translate to real-world enterprise network architecture.
+    
     -Gained practical experience troubleshooting VMware virtual hardware, memory allocation, storage devices, and virtual networking.
+    
     -Reinforced CCNA concepts by implementing them in an actual virtualized environment rather than only using Packet Tracer.
+    
     -Learned that network troubleshooting often requires separating the problem into layers instead of assuming the network configuration is the cause.
     
     
