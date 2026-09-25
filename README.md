@@ -72,21 +72,94 @@ The OPNsense VM was configured with two virtual network interfaces:
 
 #### Overview
 
-Set up a Windows Server environment to gain hands-on experience with Windows administration and Active Directory.
+Deployed a Windows Server virtual machine as a Domain Controller for the lab environment. Active Directory Domain Services (AD DS) was installed and configured to provide centralized identity management, authentication, and DNS services for the virtual network.
 
-#### Planned Configuration
+The domain controller was configured with the `jaylon.lab` Active Directory domain and was connected to the OPNsense LAN through VMware's VMnet1 network.
 
-- Install Windows Server
-- Configure a static IP address
-- Configure the server hostname
-- Install the **Active Directory Domain Services (AD DS)** role
-- Promote the server to a domain controller
-- Create a lab domain
-- Create organizational units (OUs)
-- Create test users and groups
-- Configure basic Group Policy
-- Join a Windows client to the domain
-- Test authentication and domain connectivity
+#### Virtual Environment
+
+- VMware Workstation
+- Windows Server
+- Windows 11 Client VM
+- OPNsense
+- VMnet1 Host-only Network
+
+#### Domain Controller Configuration
+
+**Hostname:** `LAB-DC01`
+
+**IP Address:** `10.0.0.4/24`
+
+**Default Gateway:** `10.0.0.2`
+
+**Domain:** `jaylon.lab`
+
+**Roles Installed:**
+- Active Directory Domain Services (AD DS)
+- DNS Server
+
+#### Active Directory Configuration
+
+Created a new Active Directory forest using:
+
+jaylon.lab
+
+Created an organizational unit for lab users:
+
+Lab Users
+
+Created two test accounts:
+
+- `jaylan.admin` — administrative lab account
+- `test.user` — standard user account
+
+The separate administrator and standard-user accounts were used to demonstrate basic identity management and privilege separation within the domain.
+
+### DNS Configuration
+
+Configured `LAB-DC01` to provide DNS for the Active Directory environment.
+
+The domain controller uses:
+
+`10.0.0.4`
+
+as its DNS address.
+
+DNS was tested by resolving:
+
+- `jaylon.lab`
+- `LAB-DC01.jaylon.lab`
+
+Successful DNS resolution confirmed connectivity between the Windows client and the domain controller.
+
+### Windows 11 Domain Client
+
+Created a Windows 11 virtual machine named:
+
+`LAB-CLIENT01`
+
+The client was connected to VMware VMnet1 and configured with a static lab address:
+
+- IP Address: `10.0.0.20`
+- Subnet Mask: `255.255.255.0`
+- Gateway: `10.0.0.2`
+- DNS: `10.0.0.4`
+
+The client successfully communicated with the domain controller and was joined to:
+
+`jaylon.lab`
+
+The `test.user` Active Directory account was then used to successfully log into the Windows 11 client.
+
+### Group Policy
+
+Created a custom Group Policy Object named:
+
+`Lab Workstation Policy`
+
+The policy was linked to the `jaylon.lab` domain and configured to demonstrate centralized policy management.
+
+
 
 ### 7. Hybrid Physical + Virtual Network
 
@@ -193,5 +266,40 @@ This lab will be used to practice:
     -Reinforced CCNA concepts by implementing them in an actual virtualized environment rather than only using Packet Tracer.
     
     -Learned that network troubleshooting often requires separating the problem into layers instead of assuming the network configuration is the cause.
+
+    ### Active Directory & Windows Server
+
+    - Installing and configuring Windows Server in VMware
+  
+    - Deploying Active Directory Domain Service
+    
+    - Creating an Active Directory forest and domain
+    
+    -  Understanding the role of a Domain Controller
+      
+    -   Creating Organizational Units (OUs)
+    
+    -    Creating and managing domain user accounts
+      
+    -     Separating administrative and standard user accounts
+    
+    - Understanding the relationship between Active Directory and DNS
+    
+    - Configuring a static IP address for a Domain Controller
+    
+    -  Configuring a Windows client for domain connectivity
+      
+    -   Joining a Windows workstation to an Active Directory domain
+      
+    -    Authenticating to Windows using a domain account
+      
+    -     Creating and linking Group Policy Objects
+    
+    -  Understanding centralized identity and policy management
+      
+    -   Troubleshooting virtual networking and DHCP issues
+      
+    -    Using VMware VMnet1 to connect virtual machines within an isolated lab network
+      
     
     
