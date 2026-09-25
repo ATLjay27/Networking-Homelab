@@ -275,31 +275,31 @@ This lab will be used to practice:
     
     - Creating an Active Directory forest and domain
     
-    -  Understanding the role of a Domain Controller
+    - Understanding the role of a Domain Controller
       
-    -   Creating Organizational Units (OUs)
+    - Creating Organizational Units (OUs)
     
-    -    Creating and managing domain user accounts
+    - Creating and managing domain user accounts
       
-    -     Separating administrative and standard user accounts
+    - Separating administrative and standard user accounts
     
     - Understanding the relationship between Active Directory and DNS
     
     - Configuring a static IP address for a Domain Controller
     
-    -  Configuring a Windows client for domain connectivity
+    - Configuring a Windows client for domain connectivity
       
-    -   Joining a Windows workstation to an Active Directory domain
+    - Joining a Windows workstation to an Active Directory domain
       
-    -    Authenticating to Windows using a domain account
+    - Authenticating to Windows using a domain account
       
-    -     Creating and linking Group Policy Objects
+    - Creating and linking Group Policy Objects
     
-    -  Understanding centralized identity and policy management
+    - Understanding centralized identity and policy management
       
-    -   Troubleshooting virtual networking and DHCP issues
+    - Troubleshooting virtual networking and DHCP issues
       
-    -    Using VMware VMnet1 to connect virtual machines within an isolated lab network
+    - Using VMware VMnet1 to connect virtual machines within an isolated lab network
       
     
     
