@@ -203,7 +203,7 @@ This lab reinforced that networking problems are often easier to solve by workin
 
 The biggest benefit of the project has been taking concepts learned through the CCNA and implementing them on actual hardware and virtual machines. The lab also provided experience troubleshooting situations that are difficult to reproduce in Packet Tracer alone, particularly physical cabling, VMware networking, legacy Cisco equipment, and the interaction between physical and virtual networks.
 
-[Read the full lessons learned here: ](LESSONS-LEARNED.md)
+[Read the full lessons learned here: ](LESSONS-LEARNED)
 
 ## Future Plans
 
