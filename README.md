@@ -169,44 +169,53 @@ The final phase of the lab combines the physical Cisco networking equipment with
 
 #### Planned Network
 
-The physical and virtual environments will be connected using VLANs and trunking.
+Physical Connection
 
-- **Cisco Catalyst 2960:** Physical access/IDF switch
-- **OPNsense:** Virtual firewall/router
-- **VMware:** Virtual networking environment
-- **VLAN 10:** `10.0.10.0/24`
-- **VLAN 20:** `10.0.20.0/24`
-- **VLAN 30:** `10.0.30.0/24`
-- **802.1Q trunking:** VLAN transport between network devices
-- **Inter-VLAN routing:** OPNsense
+Connected the OptiPlex physical Ethernet port to the Cisco Catalyst 2960.
+Configured the Cisco switch port as an access port on VLAN 99.
+Configured the Cisco management interface with 10.0.99.1/24.
+Configured the OptiPlex physical Ethernet interface with 10.0.0.10/24.
+Verified physical connectivity by successfully pinging the Cisco switch from the OptiPlex.
 
-#### Planned Configuration
+#### VMware Bridge
 
-- Configure VLANs on the Cisco Catalyst 2960
-- Configure access ports
-- Configure an 802.1Q trunk
-- Connect the physical switch to the virtual network
-- Extend VLANs between the physical and virtual environments
-- Test connectivity between physical and virtual devices
-- Verify DHCP operation across VLANs
-- Document the final topology with a network diagram
+Created a bridged VMware network using VMnet0.
+Bridged VMnet0 to the OptiPlex physical Ethernet adapter.
+Added a third network adapter to OPNsense.
+OPNsense identified the new adapter as em2.
+Configured em2 with 10.0.99.254/24.
+Verified that em2 reported an active link.
+Successfully pinged the Cisco switch from OPNsense through the physical network connection.
+Subnet Separation
 
+Initially, both OPNsense interfaces were configured on the same 10.0.0.0/24 network. This created a routing conflict because OPNsense had two interfaces connected to the same subnet.
 
-## What I'm Learning
+The network was redesigned using separate subnets:
 
-This lab will be used to practice:
+OPNsense LAN (em1): 10.0.0.2/24
+OPNsense physical interface (em2): 10.0.99.254/24
+Cisco management interface: 10.0.99.1/24
+Separating the networks allowed OPNsense to correctly determine which interface should be used to reach each subnet.
 
-- Cisco IOS
-- Ethernet and physical networking
-- VLANs
-- Trunking
-- Spanning Tree Protocol
-- Routing
-- DHCP
-- NAT
-- ACLs
-- Network troubleshooting
-- Virtual networking
+#### Routing
+
+The OptiPlex remained on the 10.0.0.0/24 network while the Cisco management interface was moved to the 10.0.99.0/24 network.
+
+A static route was configured on the OptiPlex so traffic destined for the Cisco management network is sent to OPNsense:
+
+This allows the OptiPlex to reach the physical Cisco management network through the OPNsense router while maintaining its normal network connectivity.
+
+#### Troubleshooting
+
+During testing, OPNsense initially had both em1 and em2 configured within the same 10.0.0.0/24 subnet. A route lookup showed that OPNsense was attempting to reach the Cisco through em1 instead of the physical-side em2 interface.
+
+The issue was resolved by separating the networks into different subnets. After changing the physical-side network to 10.0.99.0/24, OPNsense correctly routed traffic through em2.
+
+Additional connectivity testing was performed using:
+
+Ping, tracert, arp, ifconfig, route
+
+These tools were used to identify whether issues were occurring at the physical, Layer 2, or Layer 3 level.
 
   ## Lessons Learned
 
@@ -301,5 +310,24 @@ This lab will be used to practice:
       
     - Using VMware VMnet1 to connect virtual machines within an isolated lab network
       
-    
-    
+   ### Hybrid Physical + Virtual Network
+
+    - How VMware bridged networking connects virtual machines to a physical network adapter.
+      
+    - How a physical Ethernet adapter can connect a virtualized network environment to physical networking equipment.
+      
+    - Why different OPNsense interfaces should normally use different IP subnets.
+      
+    - How routers determine which interface to use based on their routing table.
+      
+    - How overlapping subnets on multiple router interfaces can cause routing problems.
+      
+    - How Layer 3 routing connects separate IP networks.
+      
+    - How static routes can direct traffic to a specific remote subnet.
+      
+    - How to troubleshoot connectivity by testing each section of a network individually.
+      
+    - How to distinguish physical connectivity, Layer 2 connectivity, and Layer 3 routing problems.
+      
+    - How a Cisco Catalyst 2960 can provide Layer 2 switching while OPNsense performs Layer 3 routing between networks.
